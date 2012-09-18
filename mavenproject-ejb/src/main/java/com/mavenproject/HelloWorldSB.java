@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com;
+package com.mavenproject;
 
 import javax.ejb.Stateless;
 
 /**
  *
- * @author zcpw
+ * @author Maurício
  */
 @Stateless
 public class HelloWorldSB {

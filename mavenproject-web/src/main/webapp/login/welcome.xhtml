@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+    <f:loadBundle basename="com.bundle.messages" var="i18n" ></f:loadBundle>
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <h2><h:outputText value="#{i18n['com.login.label.bemvindo']}"></h:outputText> <h:outputText value="#{usuario.conta}"></h:outputText></h2>
+    </h:body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+    <f:loadBundle basename="com.bundle.messages" var="i18n" ></f:loadBundle>
+    
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <h2><h:outputText value="#{i18n['com.login.label.tituloFormulario']}"></h:outputText></h2>
+        <h:form>
+            <p:fieldset>
+                <h:panelGrid columns="3" width="300" border="0" >
+
+                    <h:outputLabel value="#{i18n['com.login.label.conta']}"></h:outputLabel>
+                    <p:inputText value="#{usuario.conta}" id="conta" ></p:inputText>
+                    <p:message for="conta"></p:message>
+
+                    <h:outputLabel value="#{i18n['com.login.label.senha']}"></h:outputLabel>
+                    <p:password value="#{usuario.senha}" id="senha"></p:password>
+                    <p:message for="senha"></p:message>
+                    
+                    <p:commandButton value="logar" action="#{loginMB.login}" ajax="false"></p:commandButton>
+                </h:panelGrid>
+            </p:fieldset>
+        </h:form>
+    </h:body>
+</html>

@@ -4,6 +4,7 @@
  */
 package com;
 
+import com.mavenproject.HelloWorldSB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author zcpw
+ * @author Maurício
  */
 @WebServlet(name = "HelloWorldServlet", urlPatterns = {"/helloworld"})
 public class HelloWorldServlet extends HttpServlet {
