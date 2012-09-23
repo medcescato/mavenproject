@@ -21,6 +21,15 @@ import javax.validation.constraints.Size;
 @Model
 public class Usuario {
 
+    public static Usuario monta() {
+        return new Usuario();
+    }
+    
+    public Usuario comConta(String conta) {
+        this.conta = conta;
+        return this;
+    }
+    
     @Id @GeneratedValue
     private Long id;
     

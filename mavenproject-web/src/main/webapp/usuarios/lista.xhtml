@@ -7,7 +7,16 @@
       xmlns:p="http://primefaces.org/ui">
     <ui:composition template="/template.xhtml">
         <ui:define name="main">
-            Apresenta lista usuarios
+            <h:form>  
+                <p:dataTable var="umUsuario" value="#{usuarioController.lista}" paginator="true" rows="2"  
+                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                 rowsPerPageTemplate="2,10,15">  
+                    <p:column headerText="#{i18n['com.mavenproject.usuario.lista.label.conta']}">  
+                        <h:outputText value="#{umUsuario.conta}" />  
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton value="#{i18n['com.mavenproject.usuario.lista.botao.novo']}" actionListener="#{usuarioController.novo}" ajax="false" />  
+            </h:form>
         </ui:define>
     </ui:composition>
 </html>

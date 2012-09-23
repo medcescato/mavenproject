@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
@@ -18,6 +19,7 @@ import javax.faces.bean.ManagedBean;
 
 @Stateless
 @ManagedBean
+@RequestScoped
 public class UsuarioController {
     
     @EJB RepositorioUsuario repUsuario; 
@@ -25,12 +27,22 @@ public class UsuarioController {
     private List<Usuario> lista;
     
     public String init() {
-        lista = repUsuario.getUsuarios();
-        System.out.println("Numero de usuarios cadastrados: " + lista.size());
         return "/usuarios/lista";
     }
 
+    public String novo() {
+        System.out.println("Vai para /usuarios/novo");
+        return "novo";
+    }
+    
     public List<Usuario> getLista() {
+        if (lista == null) {
+            System.out.print("Lista nula, vou carrega-la - ");
+            //lista = repUsuario.getUsuarios();
+            lista = java.util.Arrays.asList(new Usuario[] {Usuario.monta().comConta("admin"), Usuario.monta().comConta("Mario"), Usuario.monta().comConta("Jose")});
+        
+        }
+        System.out.println("Numero de usuarios cadastrados: " + lista.size());
         return lista;
     }
     
