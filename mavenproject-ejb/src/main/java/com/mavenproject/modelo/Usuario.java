@@ -4,6 +4,7 @@
  */
 package com.mavenproject.modelo;
 
+import java.io.Serializable;
 import javax.enterprise.inject.Model;
 import javax.inject.Named;
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Named
 @Model
-public class Usuario {
+public class Usuario implements Serializable {
 
     public static Usuario monta() {
         return new Usuario();

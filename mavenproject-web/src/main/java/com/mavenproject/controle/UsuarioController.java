@@ -11,6 +11,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
 
 /**
  *
@@ -23,6 +24,7 @@ import javax.faces.bean.RequestScoped;
 public class UsuarioController {
     
     @EJB RepositorioUsuario repUsuario; 
+    @Inject Usuario usuario;
     
     private List<Usuario> lista;
     
@@ -31,19 +33,30 @@ public class UsuarioController {
     }
 
     public String novo() {
-        System.out.println("Vai para /usuarios/novo");
-        return "novo";
+        String result = "novo";
+        print("Vai para: " + result);
+        return result;
+    }
+
+    public String criar() {
+        repUsuario.criar(usuario);
+        String result = "editar";
+        print("Vai para: " + result);
+        return result;
     }
     
     public List<Usuario> getLista() {
         if (lista == null) {
-            System.out.print("Lista nula, vou carrega-la - ");
-            //lista = repUsuario.getUsuarios();
-            lista = java.util.Arrays.asList(new Usuario[] {Usuario.monta().comConta("admin"), Usuario.monta().comConta("Mario"), Usuario.monta().comConta("Jose")});
-        
+            print("Lista nula, vou carrega-la - ");
+            lista = repUsuario.getUsuarios();
+            //lista = java.util.Arrays.asList(new Usuario[] {Usuario.monta().comConta("admin"), Usuario.monta().comConta("Mario"), Usuario.monta().comConta("Jose")});
         }
-        System.out.println("Numero de usuarios cadastrados: " + lista.size());
+        print("Numero de usuarios cadastrados: " + lista.size());
         return lista;
+    }
+    
+    public void print(String message) {
+        System.out.print(this.toString() + ":" + message);
     }
     
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:form id="usuario" >
+        <h:panelGrid columns="3" >
+
+            <h:outputText value="#{i18n['com.mavenproject.usuario.edicao.label.conta']}" /> 
+            <p:inputText value="#{usuario.conta}" id="conta" /> 
+            <p:message for="conta"></p:message>
+
+            <h:outputText value="#{i18n['com.mavenproject.usuario.edicao.label.senha']}" /> 
+            <p:inputText value="#{usuario.senha}" id="senha" /> 
+            <p:message for="senha"></p:message>
+
+        </h:panelGrid>
+
+        <ui:insert name="buttonbar" >
+            buttonbar
+        </ui:insert>
+    </h:form>
+</html>

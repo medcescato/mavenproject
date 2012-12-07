@@ -9,7 +9,8 @@
         <ui:define name="main">
             <ui:composition template="formulario.xhtml">
                 <ui:define name="buttonbar">
-                    <p:commandButton value="#{i18n['com.mavenproject.usuario.edicao.botao.criar']}" action="#{usuarioController.criar}" ajax="false" />
+                    <p:commandButton value="#{i18n['com.mavenproject.usuario.edicao.botao.salvar']}" action="#{usuarioController.salvar}" ajax="false" />
+                    <p:commandButton value="#{i18n['com.mavenproject.usuario.edicao.botao.excluir']}" action="#{usuarioController.excluir}" ajax="false" />
                 </ui:define>
             </ui:composition>
         </ui:define>
